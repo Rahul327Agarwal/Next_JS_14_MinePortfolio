@@ -1,5 +1,8 @@
 import React from "react";
 import userData from "../../constants/data";
+import imagesDetails from "../../constants/techStackImages";
+import SocialMediaDetails from "../../constants/SocialData";
+import Image from "next/image";
 
 export default function AboutMe() {
   return (
@@ -68,71 +71,24 @@ export default function AboutMe() {
               Social Links
             </h1>
             <div className="mt-4 ml-4">
-              <div className="flex flex-row justify-start items-center ">
-                <a
-                  href={userData.socialLinks.facebook}
-                  target="__blank"
-                  className="flex flex-row items-center space-x-4 group"
+              {SocialMediaDetails.map(({ name, title }) => (
+                <div
+                  className="flex flex-row justify-start items-center "
+                  key={name}
                 >
-                  <div className="my-4">&rarr;</div>
-                  <div className="text-lg text-gray-500 font-mono relative overflow-hidden dark:text-gray-300">
-                    <div className="absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300"></div>
-                    Facebook
-                  </div>
-                </a>
-              </div>
-              <div className="flex flex-row justify-start items-center">
-                <a
-                  href={userData.socialLinks.twitter}
-                  target="__blank"
-                  className="flex flex-row items-center space-x-4 group"
-                >
-                  <div className="my-4">&rarr;</div>
-                  <div className="text-lg text-gray-500 font-mono relative overflow-hidden dark:text-gray-300">
-                    <div className="absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300"></div>
-                    Twitter
-                  </div>
-                </a>
-              </div>
-              <div className="flex flex-row justify-start items-center">
-                <a
-                  href={userData.socialLinks.github}
-                  target="__blank"
-                  className="flex flex-row items-center space-x-4 group"
-                >
-                  <div className="my-4">&rarr;</div>
-                  <div className="text-lg text-gray-500 font-mono relative overflow-hidden dark:text-gray-300">
-                    <div className="absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300"></div>
-                    GitHub
-                  </div>
-                </a>
-              </div>
-              <div className="flex flex-row justify-start items-center">
-                <a
-                  href={userData.socialLinks.linkedin}
-                  target="__blank"
-                  className="flex flex-row items-center space-x-4 group"
-                >
-                  <div className="my-4">&rarr;</div>
-                  <div className="text-lg text-gray-500 font-mono relative overflow-hidden dark:text-gray-300">
-                    <div className="absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300"></div>
-                    LinkedIn
-                  </div>
-                </a>
-              </div>
-              <div className="flex flex-row justify-start items-center">
-                <a
-                  href={userData.socialLinks.instagram}
-                  target="__blank"
-                  className="flex flex-row items-center space-x-4 group"
-                >
-                  <div className="my-4">&rarr;</div>
-                  <div className="text-lg text-gray-500 font-mono relative overflow-hidden dark:text-gray-300">
-                    <div className="absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-28 group-hover:translate-x-0 transition duration-300"></div>
-                    Instagram
-                  </div>
-                </a>
-              </div>
+                  <a
+                    href={userData.socialLinks[name]}
+                    target="__blank"
+                    className="flex flex-row items-center space-x-4 group"
+                  >
+                    <div className="my-4">&rarr;</div>
+                    <div className="text-lg text-gray-500 font-mono relative overflow-hidden dark:text-gray-300">
+                      <div className="absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300"></div>
+                      {title}
+                    </div>
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
           {/* Text area */}
@@ -150,66 +106,16 @@ export default function AboutMe() {
               Tech Stack
             </h1>
             <div className="flex flex-row flex-wrap mt-8">
-              <img
-                src="/techStackImages/JS.png"
-                alt="JavaScript"
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <img
-                src="/techStackImages/React.png"
-                alt="React"
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <img
-                src="/techStackImages/Redux.png"
-                alt="Redux"
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <img
-                src="/techStackImages/next js.png"
-                alt="Next JS"
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <img
-                src="/techStackImages/HTML.png"
-                alt="HTML"
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <img
-                src="/techStackImages/CSS.png"
-                alt="CSS"
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <img
-                src="/techStackImages/MUI.png"
-                alt="Material UI"
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <img
-                src="/techStackImages/node.svg"
-                alt="Node Js"
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <img
-                src="/techStackImages/mongodb.png"
-                alt="mongodb"
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <img
-                src="/techStackImages/express.svg"
-                alt="Express JS"
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <img
-                src="/techStackImages/postman.png"
-                alt="Postman"
-                className="h-20 w-20 mx-4 my-4"
-              />
-              <img
-                src="/techStackImages/git.png"
-                alt="Git"
-                className="h-20 w-20 mx-4 my-4"
-              />
+              {imagesDetails.map(({ name, alt }) => (
+                <Image
+                  src={`/techStackImages/${name}`}
+                  alt={alt}
+                  key={name}
+                  width={20}
+                  height={20}
+                  className="h-20 w-20 mx-4 my-4"
+                />
+              ))}
             </div>
           </div>
         </div>
