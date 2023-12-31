@@ -1,4 +1,8 @@
-const imagesDetails = [
+export type imagesDetailsType = {
+  name: string;
+  alt: string;
+};
+const imagesDetails: imagesDetailsType[] = [
   {
     name: "JS.png",
     alt: "JavaScript",

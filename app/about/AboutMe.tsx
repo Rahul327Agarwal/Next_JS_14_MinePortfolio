@@ -1,21 +1,29 @@
 import React from "react";
 import userData from "../../constants/data";
-import imagesDetails from "../../constants/techStackImages";
-import SocialMediaDetails from "../../constants/SocialData";
+import imagesDetails, {
+  imagesDetailsType,
+} from "../../constants/techStackImages";
+import SocialMediaDetails, {
+  SocialMediaDetailsType,
+} from "../../constants/SocialData";
 import Image from "next/image";
 
-export default function AboutMe() {
+interface AboutMeProps {
+  // Add any props if needed
+}
+
+const AboutMe: React.FC<AboutMeProps> = () => {
   return (
     <section className="bg-gray-100 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto h-48 bg-gray-100 dark:bg-gray-900">
-        <h1 className=" text-5xl md:text-9xl font-bold py-12 text-center md:text-left">
+        <h1 className="text-5xl md:text-9xl font-bold py-12 text-center md:text-left">
           About Me.
         </h1>
       </div>
       <div className="bg-gray-100 -mt-10 dark:bg-gray-900">
         <div className="text-container max-w-6xl mx-auto pt-20">
           <p
-            className="leading-loose text-2xl md:text-4xl font-semibold  mx-4"
+            className="leading-loose text-2xl md:text-4xl font-semibold mx-4"
             style={{ lineHeight: "3rem" }}
           >
             {userData.about.title}. Currently working on{" "}
@@ -23,6 +31,7 @@ export default function AboutMe() {
               className="bg-red-500 rounded-md px-2 py-1 text-white"
               href={userData.about.currentProjectUrl}
               target="_blank"
+              rel="noopener noreferrer"
             >
               {userData.about.currentProject} ✈️
             </a>
@@ -43,6 +52,7 @@ export default function AboutMe() {
                   href={`mailto:${userData.email}`}
                   target="_blank"
                   className="text-gray-800 border-b-2 border-gray-800 dark:border-gray-300 font-bold dark:text-gray-300"
+                  rel="noopener noreferrer"
                 >
                   mail
                 </a>{" "}
@@ -60,6 +70,7 @@ export default function AboutMe() {
                   href={userData.resumeUrl}
                   target="__blank"
                   className="text-gray-800 border-b-2 border-gray-800 dark:border-gray-300 font-bold dark:text-gray-300"
+                  rel="noopener noreferrer"
                 >
                   CV
                 </a>{" "}
@@ -71,29 +82,32 @@ export default function AboutMe() {
               Social Links
             </h1>
             <div className="mt-4 ml-4">
-              {SocialMediaDetails.map(({ name, title }) => (
-                <div
-                  className="flex flex-row justify-start items-center "
-                  key={name}
-                >
-                  <a
-                    href={userData.socialLinks[name]}
-                    target="__blank"
-                    className="flex flex-row items-center space-x-4 group"
+              {SocialMediaDetails.map(
+                ({ name, title }: SocialMediaDetailsType) => (
+                  <div
+                    className="flex flex-row justify-start items-center "
+                    key={name}
                   >
-                    <div className="my-4">&rarr;</div>
-                    <div className="text-lg text-gray-500 font-mono relative overflow-hidden dark:text-gray-300">
-                      <div className="absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300"></div>
-                      {title}
-                    </div>
-                  </a>
-                </div>
-              ))}
+                    <a
+                      href={userData.socialLinks[name]}
+                      target="__blank"
+                      className="flex flex-row items-center space-x-4 group"
+                      rel="noopener noreferrer"
+                    >
+                      <div className="my-4">&rarr;</div>
+                      <div className="text-lg text-gray-500 font-mono relative overflow-hidden dark:text-gray-300">
+                        <div className="absolute h-0.5 w-full bg-gray-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300"></div>
+                        {title}
+                      </div>
+                    </a>
+                  </div>
+                )
+              )}
             </div>
           </div>
           {/* Text area */}
           <div className="col-span-1 md:col-span-2">
-            {userData.about.description?.map((desc, idx) => (
+            {userData.about.description?.map((desc: string, idx: number) => (
               <p
                 key={idx}
                 className="text-xl text-gray-700 mb-4 dark:text-gray-300 "
@@ -106,7 +120,7 @@ export default function AboutMe() {
               Tech Stack
             </h1>
             <div className="flex flex-row flex-wrap mt-8">
-              {imagesDetails.map(({ name, alt }) => (
+              {imagesDetails.map(({ name, alt }: imagesDetailsType) => (
                 <Image
                   src={`/techStackImages/${name}`}
                   alt={alt}
@@ -122,4 +136,6 @@ export default function AboutMe() {
       </div>
     </section>
   );
-}
+};
+
+export default AboutMe;

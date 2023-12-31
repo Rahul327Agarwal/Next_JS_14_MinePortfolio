@@ -1,4 +1,36 @@
-const userData = {
+type About = {
+  title: string;
+  description: string[];
+  currentProject: string;
+  currentProjectUrl: string;
+};
+export type SocialMediaDetail = {
+  [key: string]: string;
+};
+
+type Experience = {
+  title: string;
+  company: string;
+  year: string;
+  companyLink: string;
+  desc: string;
+};
+
+type UserData = {
+  githubUsername: string;
+  name: string;
+  designation: string;
+  avatarUrl: string;
+  email: string;
+  phone: string;
+  address: string;
+  about: About;
+  experience: Experience[];
+  resumeUrl: string;
+  socialLinks: SocialMediaDetail;
+};
+
+const userData: UserData = {
   githubUsername: "Rahul327Agarwal",
   name: "Rahul Agarwal",
   designation: "React Developer",
