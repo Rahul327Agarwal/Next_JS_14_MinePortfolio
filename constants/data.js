@@ -23,14 +23,14 @@ const userData = {
       company: "Neosoft",
       year: "2022",
       companyLink: "https://www.neosofttech.com/",
-      desc: "Your last moment revision friend right before a Tech coding interview. Practice problems and get hired at top Product based companies.",
+      desc: "PMS(Patient Management Sytem) software designed to facilitate communication and streamline operations between healthcar professionals and patients.",
     },
     {
       title: "Software Developer",
       company: "Gemini Solutions",
       year: "2018",
       companyLink: "https://www.geminisolutions.com/",
-      desc: "Contributed to our flagship product - Panna - which is an AI powered candidate interviewing product.",
+      desc: "Spearheaded the design and development of the Performance and Incident Monitoring Tool (PINT), a vital resource for the support team responsible for monitoring and managing a vast number of running jobs.",
     },
     {
       title: "Graduation",
