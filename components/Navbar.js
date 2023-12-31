@@ -40,7 +40,7 @@ export default function Navbar() {
             About{" "}
             {router.asPath === "/about" && (
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns={`${process.env.W3URL}`}
                 width="16"
                 height="16"
                 fill="currentColor"
@@ -66,7 +66,7 @@ export default function Navbar() {
             Experience{" "}
             {router.asPath === "/experience" && (
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns={`${process.env.W3URL}`}
                 width="16"
                 height="16"
                 fill="currentColor"
@@ -91,7 +91,7 @@ export default function Navbar() {
             Contact
             {router.asPath === "/contact" && (
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns={`${process.env.W3URL}`}
                 width="16"
                 height="16"
                 fill="currentColor"
@@ -114,7 +114,7 @@ export default function Navbar() {
             className="text-base font-normal text-gray-600 dark:text-gray-300"
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns={`${process.env.W3URL}`}
               width="16"
               height="16"
               fill="currentColor"
@@ -130,7 +130,7 @@ export default function Navbar() {
             className="text-base font-normal text-gray-600 dark:text-gray-300"
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns={`${process.env.W3URL}`}
               width="16"
               height="16"
               fill="currentColor"
@@ -146,7 +146,7 @@ export default function Navbar() {
             className="text-base font-normal text-gray-600 dark:text-gray-300"
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns={`${process.env.W3URL}`}
               width="16"
               height="16"
               fill="currentColor"
@@ -164,7 +164,7 @@ export default function Navbar() {
           >
             {mounted && (
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns={`${process.env.W3URL}`}
                 viewBox="0 0 24 24"
                 fill="currentColor"
                 stroke="currentColor"

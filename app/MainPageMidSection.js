@@ -36,7 +36,7 @@ export default function MainPageMidSection() {
           <div className="flex flex-row justify-between mt-4">
             <div className="flex flex-row space-x-4">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns={`${process.env.W3URL}`}
                 width="16"
                 height="16"
                 fill="currentColor"

@@ -31,7 +31,7 @@ export default function Footer() {
               className="text-base font-normal text-gray-600 dark:text-gray-300"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns={`${process.env.W3URL}`}
                 width="16"
                 height="16"
                 fill="currentColor"
@@ -47,7 +47,7 @@ export default function Footer() {
               className="text-base font-normal text-gray-600 dark:text-gray-300"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns={`${process.env.W3URL}`}
                 width="16"
                 height="16"
                 fill="currentColor"
@@ -63,7 +63,7 @@ export default function Footer() {
               className="text-base font-normal text-gray-600 dark:text-gray-300"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns={`${process.env.W3URL}`}
                 width="16"
                 height="16"
                 fill="currentColor"

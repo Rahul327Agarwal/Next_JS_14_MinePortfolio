@@ -14,12 +14,12 @@ export default async function LatestCode() {
           </h1>
 
           <a
-            href={`https://github.com/${userData.githubUsername}`}
+            href={`${process.env.MyGitHubUrl}`}
             target="_blank"
             className="mb-20 md:mb-0 px-8 py-4 rounded-md bg-white shadow-lg text-xl font-semibold flex flex-row space-x-4 items-center dark:text-gray-700"
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns={`${process.env.W3URL}`}
               width="16"
               height="16"
               fill="currentColor"
