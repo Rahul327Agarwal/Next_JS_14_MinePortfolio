@@ -1,8 +1,12 @@
 "use client";
-import React from "react";
+import React, { TextareaHTMLAttributes } from "react";
 import userData from "../../constants/data";
 
-export default function Contact() {
+interface ContactProps {
+  // Add any props if needed
+}
+
+export const Contact: React.FC<ContactProps> = () => {
   return (
     <section>
       <div className="max-w-6xl mx-auto h-48 bg-[#02044A] antialiased">
@@ -170,8 +174,7 @@ export default function Contact() {
               Message
             </label>
             <textarea
-              rows="4"
-              type="text"
+              rows={4}
               className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500"
               name="message"
             ></textarea>
@@ -189,4 +192,4 @@ export default function Contact() {
       </div>
     </section>
   );
-}
+};
