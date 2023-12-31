@@ -13,7 +13,7 @@ type ExperienceCardTypes = {
   companyLink: string;
 };
 
-export const Experience: ExperienceProps = () => {
+const Experience: React.FC<ExperienceProps> = () => {
   return (
     <section className="bg-gray-100 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto h-48 bg-gray-100 dark:bg-gray-900">
@@ -77,3 +77,5 @@ const ExperienceCard = ({
     </>
   );
 };
+
+export default Experience;

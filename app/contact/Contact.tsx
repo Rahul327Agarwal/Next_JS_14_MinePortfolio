@@ -6,7 +6,7 @@ interface ContactProps {
   // Add any props if needed
 }
 
-export const Contact: React.FC<ContactProps> = () => {
+const Contact: React.FC<ContactProps> = () => {
   return (
     <section>
       <div className="max-w-6xl mx-auto h-48 bg-[#02044A] antialiased">
@@ -193,3 +193,5 @@ export const Contact: React.FC<ContactProps> = () => {
     </section>
   );
 };
+
+export default Contact;

@@ -1,7 +1,17 @@
 import userData from "../constants/data";
 import { getLatestRepos } from "../lib/getLatestRepos";
 
-export default async function LatestCode() {
+interface LatestCodeProps {
+  // Add any props if needed
+}
+
+type GithubRepoCard = {
+  name: string;
+  description: string;
+  clone_url: string;
+};
+
+const LatestCode: React.FC<LatestCodeProps> = async () => {
   let token = process.env.GITHUB_AUTH_TOKEN;
   const repos = await getLatestRepos(userData, token);
 
@@ -41,25 +51,30 @@ export default async function LatestCode() {
         {/* Single github Repo */}
 
         {repos &&
-          repos.map((latestRepo, idx) => (
-            <GithubRepoCard latestRepo={latestRepo} key="idx" />
-          ))}
+          repos.map(
+            ({ name, description, clone_url }: GithubRepoCard, idx: number) => (
+              <GithubRepoCard
+                name={name}
+                clone_url={clone_url}
+                description={description}
+                key={idx}
+              />
+            )
+          )}
       </div>
     </section>
   );
-}
+};
 
-const GithubRepoCard = ({ latestRepo }) => {
+const GithubRepoCard = ({ name, description, clone_url }: GithubRepoCard) => {
   return (
     <div className="github-repo">
       <h1 className="font-semibold text-xl dark:text-gray-200 text-gray-700">
-        {latestRepo.name}
+        {name}
       </h1>
-      <p className="text-base font-normal my-4 text-gray-500">
-        {latestRepo.description}
-      </p>
+      <p className="text-base font-normal my-4 text-gray-500">{description}</p>
       <a
-        href={latestRepo.clone_url}
+        href={clone_url}
         target="_blank"
         className="font-semibold group flex flex-row space-x-2 w-full items-center"
       >
@@ -71,3 +86,5 @@ const GithubRepoCard = ({ latestRepo }) => {
     </div>
   );
 };
+
+export default LatestCode;
