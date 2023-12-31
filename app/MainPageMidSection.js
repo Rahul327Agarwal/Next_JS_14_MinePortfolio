@@ -3,6 +3,7 @@ import { RoughNotationGroup } from "react-rough-notation";
 import { RainbowHighlight } from "./RainbowHighlight";
 import userData from "../constants/data";
 import Image from "next/image";
+import Style from "./CustomStyles.module.css";
 
 export default function MainPageMidSection() {
   const colors = ["#F59E0B", "#84CC16", "#10B981", "#3B82F6"];
@@ -32,6 +33,7 @@ export default function MainPageMidSection() {
             width={300}
             height={20}
             alt="myProfilePic"
+            className={`${Style.objectCover} h-80`}
           />
           <div className="flex flex-row justify-between mt-4">
             <div className="flex flex-row space-x-4">
