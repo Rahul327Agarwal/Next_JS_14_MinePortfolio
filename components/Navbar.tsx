@@ -2,11 +2,12 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import userData from "../constants/data";
 
 export default function Navbar() {
   const router = useRouter();
+  const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -32,13 +33,13 @@ export default function Navbar() {
           <Link
             href="/about"
             className={`text-base  ${
-              router.asPath === "/about"
+              pathname === "/about"
                 ? "text-gray-800 font-bold dark:text-gray-400"
                 : "text-gray-600 dark:text-gray-300 font-normal "
             }`}
           >
             About{" "}
-            {router.asPath === "/about" && (
+            {pathname === "/about" && (
               <svg
                 xmlns={`${process.env.W3URL}`}
                 width="16"
@@ -58,13 +59,13 @@ export default function Navbar() {
           <Link
             href="/experience"
             className={`text-base  ${
-              router.asPath === "/experience"
+              pathname === "/experience"
                 ? "text-gray-800 font-bold dark:text-gray-400"
                 : "text-gray-600 dark:text-gray-300 font-normal "
             }`}
           >
             Experience{" "}
-            {router.asPath === "/experience" && (
+            {pathname === "/experience" && (
               <svg
                 xmlns={`${process.env.W3URL}`}
                 width="16"
@@ -83,13 +84,13 @@ export default function Navbar() {
           <Link
             href="/contact"
             className={`text-base  ${
-              router.asPath === "/contact"
+              pathname === "/contact"
                 ? "text-gray-800 font-bold dark:text-gray-400"
                 : "text-gray-600 dark:text-gray-300 font-normal "
             }`}
           >
             Contact
-            {router.asPath === "/contact" && (
+            {pathname === "/contact" && (
               <svg
                 xmlns={`${process.env.W3URL}`}
                 width="16"
@@ -109,7 +110,7 @@ export default function Navbar() {
 
         <div className="space-x-4 flex flex-row items-center">
           <a
-            href={userData.socialLinks.instagram}
+            href={process.env.Instagram}
             target="_blank"
             className="text-base font-normal text-gray-600 dark:text-gray-300"
           >
@@ -125,7 +126,7 @@ export default function Navbar() {
             </svg>
           </a>
           <a
-            href={userData.socialLinks.twitter}
+            href={process.env.Twitter}
             target="_blank"
             className="text-base font-normal text-gray-600 dark:text-gray-300"
           >
@@ -141,7 +142,7 @@ export default function Navbar() {
             </svg>
           </a>
           <a
-            href={userData.socialLinks.linkedin}
+            href={process.env.Linkedin}
             target="_blank"
             className="text-base font-normal text-gray-600 dark:text-gray-300"
           >

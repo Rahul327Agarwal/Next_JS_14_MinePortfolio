@@ -1,7 +1,9 @@
 import React from "react";
 import userData from "../constants/data";
 
-export default function Footer() {
+interface FooterProps {}
+
+const Footer: React.FC<FooterProps> = () => {
   return (
     <div className="bg-[#d3d3d3] dark:bg-gray-900">
       <div className="max-w-6xl  mx-auto px-4 py-10 md:py-20">
@@ -78,4 +80,6 @@ export default function Footer() {
       </div>
     </div>
   );
-}
+};
+
+export default Footer;

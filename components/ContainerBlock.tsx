@@ -2,7 +2,11 @@ import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-export default function ContainerBlock({ children }) {
+interface ContainerBlockProps {
+  children: React.ReactNode;
+}
+
+const ContainerBlock: React.FC<ContainerBlockProps> = ({ children }) => {
   return (
     <div>
       <main className="dark:bg-gray-800 w-full">
@@ -12,4 +16,6 @@ export default function ContainerBlock({ children }) {
       </main>
     </div>
   );
-}
+};
+
+export default ContainerBlock;
