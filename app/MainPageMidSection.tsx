@@ -5,7 +5,11 @@ import userData from "../constants/data";
 import Image from "next/image";
 import Style from "./CustomStyles.module.css";
 
-export default function MainPageMidSection() {
+interface MainPageMidSectionProps {
+  // Add any props if needed
+}
+
+const MainPageMidSection: React.FC<MainPageMidSectionProps> = () => {
   const colors = ["#F59E0B", "#84CC16", "#10B981", "#3B82F6"];
   const AboutMe = ["Developer.", "Designer.", "Programmer.", "Youtuber."];
   return (
@@ -14,9 +18,9 @@ export default function MainPageMidSection() {
 
       <div className="w-full md:w-1/2 mx-auto text-center md:text-left lg:p-20">
         <RoughNotationGroup show={true}>
-          {AboutMe.map((role, idx) => {
+          {AboutMe.map((role: string, idx: number) => {
             return (
-              <RainbowHighlight color={colors[idx]} key={idx}>
+              <RainbowHighlight color={colors[idx]} key={idx} role={role}>
                 <h1 className="text-4xl md:text-7xl font-bold text-gray-700 dark:text-gray-200 my-2">
                   {role}
                 </h1>
@@ -57,4 +61,5 @@ export default function MainPageMidSection() {
       </div>
     </div>
   );
-}
+};
+export default MainPageMidSection;
